@@ -1,0 +1,145 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Class Registreer
+ * @Author Wasla Habib
+ * @Reviewer Glenn Martens
+ * @link https://ellislab.com/codeigniter/user-guide/libraries/unit_testing.html Unit-testing
+ * @link https://www.youtube.com/watch?v=FmKm1gCgUoM Codeigniter login/registreer tutorial
+ * @link http://www.sourcecodester.com/php/7290/user-registration-and-login-system-codeigniter.html gebruiker registratie/login systeem
+ * @Link https://www.youtube.com/watch?v=T39lkofTq2M login/registreer systeem
+ */
+class Registreer extends CI_Controller {
+
+	/**
+	 * Registreer constructor.
+	 *
+	 * laden van gebruikers_model en Captcha_model.
+     */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('gebruikers_model');
+		$this->load->model('Captcha_model','captcha');
+	}
+
+	/**
+	 * Controleren of de gebruiker is ingelogd of niet.
+	 *
+	 * Indien de gebruiker is ingelogd, kan hij niet op de registratie pagina terecht komen. Deze gebruiker zal geredirect worden naar de Members Controller.
+     */
+	public function index()
+	{
+		if($this->session->is_logged_in === 1)
+		{
+			redirect('Members');
+		}
+		else
+		{
+			$data['cap'] = $this->captcha->createValues();
+			$this->load->view('shared/header');
+			$this->load->view('registreer',$data);
+			$this->load->view('shared/footer');
+		}
+	}
+
+	/**
+	 * Controle of alle verplichte velden ingevuld zijn.
+     */
+	public function validatie()
+	{
+		// Aangepaste validatie regels.
+		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[TB_Gebruikers.GB_Email]|max_length[50]');
+		$this->form_validation->set_rules('wachtwoord', 'Wachtwoord', 'required|trim|min_length[8]|max_length[40]');
+		$this->form_validation->set_rules('cwachtwoord', 'Bevestig Wachtwoord', 'required|trim|matches[wachtwoord]|min_length[8]|max_length[40]');
+		$this->form_validation->set_rules('voornaam', 'Voornaam', 'required|trim|max_length[100]');
+		$this->form_validation->set_rules('achternaam', 'Achternaam', 'required|trim|max_length[100]');
+		$this->form_validation->set_rules('captcha', "Captcha", 'required');
+
+		 // Aangepaste validatie 'error message'.
+		$this->form_validation->set_message('is_unique',"Dit e-mail is al in gebruik!");
+
+		//waarde die de gebruiken ingevuld heeft op het formulier
+		$userCaptcha = trim($this->input->post('captcha'));
+
+		//de 'echte' waarde uit de sessie halen
+		$word = $this->session->userdata('captchaWord');
+		
+		// Controleert de validatie.
+		if ($this->form_validation->run() && $userCaptcha === $word)
+		{
+            // Voegt gebruiker toe aan de database.
+			if($this->gebruikers_model->nieuwe_gebruiker())
+			{
+				$this->session->unset_userdata('captchaWord');
+				$this->load->view('shared/header');
+				$this->load->view('signup_succeed');
+				$this->load->view('shared/footer');
+				
+			} else {
+				$data['cap'] = $this->captcha->createValues();
+				$this->load->view('shared/header');
+				$this->load->view('registreer',$data);
+				$this->load->view('shared/footer');
+			}
+		} else {
+			// Als de validatie faalt, wordt de registreer pagina opnieuw weergegeven.
+			$data['cap'] = $this->captcha->createValues();
+			$this->load->view('shared/header');
+			$this->load->view('registreer',$data);
+			$this->load->view('shared/footer');
+		}
+	}
+
+	/**
+	 * Unit-test die controleerd of de registratie correct verloopt.
+     */
+	public function test()
+	{
+		// BEGIN test = Test of sign up gelukt is
+		$test = $this->form_validation->valid = TRUE;
+		$expected_res = 'Sign up gelukt';
+		$this->unit->run($test, $expected_res,'Test de form_validation','Als de form_validation  TRUE is, redirect naar de signup success pagina   ');
+		// EINDE test
+
+		// BEGIN test2 = Controleert of de gebruiker foute input ingeeft
+		$test2 = '';
+		$expected_res2 = FALSE;
+		$this->unit->run($test2, $expected_res2, 'Controleert of de gebruiker foute input ingeeft' ,'Error message');
+		// EINDE test2
+
+		// BEGIN test3 = als sign up niet gelukt
+		$test3 = $this->form_validation->valid = FALSE;
+		$expected_res3 = 'Error';
+		$this->unit->run($test3, $expected_res3,'Test de form_validation','Als de form_validation  FALSE is, redirect naar de signup  pagina   ');
+		// EINDE test3
+
+		$this->load->view('testing');
+	}
+
+	/**
+	 * Unit-test die controleerd of de gebruiker zijn data opgeslagen word in de databank.
+     */
+	public function testGebruikers_model()
+	{
+   		// BEGIN TEST1
+   		// Test de nieuwe_gebruikers() method
+   		// $result1 = $this->Gebruikers_model->nieuwe_gebruiker();
+   		$result1 = array(
+      				'GB_Email'        =>array('email' => 'test1@yahoo.com'),
+      				'GB_Wachtwoord' => array('password'=> 'password1'),
+      				'GB_Voornaam'   => array('voornaam'=>'test'),
+      				'GB_Achternaam' => array('achternaam'=>'1'),
+      				'GB_Groep'     => 'Gebruiker',
+      				'GB_Status'    => 'Niet-Actief');
+
+   		$expected_res1 = TRUE;
+
+   		$this->unit->run($result1,$expected_res1,'test nieuwe_gebruiker');
+   		// EINDE TEST1
+
+   		//Report
+   		$this->load->view('testing');
+	}
+}

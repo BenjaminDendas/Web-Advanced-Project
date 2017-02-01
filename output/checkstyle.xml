@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<checkstyle version="1.3.0">
+  <file name="config\mimes.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\Admin_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="16" severity="error" message="No summary for property $table" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="20" severity="error" message="No summary for property $column" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="24" severity="error" message="No summary for property $order" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="models\Wachtwoord_Vergeten_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="97" severity="error" message="No summary for method get_id_from_email()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="18" severity="error" message="No summary for property $column_Email" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="22" severity="error" message="No summary for property $column_ID" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="26" severity="error" message="No summary for property $column_Password" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="30" severity="error" message="No summary for property $table_Name" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="views\errors\cli\error_db.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\errors\html\error_php.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\overzicht.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\Wachtwoord_Vergeten_Aanpassen.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\testing.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\Dispatcher_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="17" severity="error" message="No summary for property $table" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="21" severity="error" message="No summary for property $column" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="26" severity="error" message="No summary for property $order" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="config\migration.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\user_agents.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Wachtwoord_Constanten.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Vraag.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\errors\cli\error_general.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\errors\cli\error_exception.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\toevoegen_vragen.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\dispatcher_overzicht.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\foreign_chars.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Werkman.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\shared\footer.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\Vraag_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\doctypes.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\restricted.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\routes.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\admin.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\database.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\Gebruikers_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Members.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\Wachtwoord_Vergeten_Aanpassen_Success.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\survey.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Categorie_toevoegen.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\Werkman_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="15" severity="error" message="No summary for property $table" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="19" severity="error" message="No summary for property $column" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="24" severity="error" message="No summary for property $order" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="views\errors\html\error_general.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\errors\html\error_exception.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\autoload.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\constants.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\Captcha_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="13" severity="error" message="No summary for method createValues()" source="phpDocumentor.file.PPC:ERR-50008"/>
+  </file>
+  <file name="views\Wachtwoord_Vergeten.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\config.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\survey_succeed.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\VeranderenWachtwoord.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="84" severity="error" message="No summary for method validate_previous_password()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="17" severity="error" message="No summary for property $user_ID" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="controllers\Gebruiker.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="29" severity="error" message="No summary for method getId()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="37" severity="error" message="No summary for method setId()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="24" severity="error" message="No summary for property $id" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="views\toevoegen_categorie.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\errors\html\error_db.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\mail.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\profiler.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Restricted.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\WachtwoordVergeten.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="148" severity="error" message="No summary for method send_Mail()" source="phpDocumentor.file.PPC:ERR-50008"/>
+  </file>
+  <file name="controllers\ToevoegenVragen.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="23" severity="error" message="No summary for property $data" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="views\veranderWachtwoord.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Email.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\signup_succeed.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\Veranderen_Wachtwoord.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\werk_overzicht.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\Wachtwoord_Vergeten_Success.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\smileys.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\VeranderWachtwoord.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\categorie_Werkman_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\VeranderWachtwoord_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="17" severity="error" message="No summary for method getPwd()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="34" severity="error" message="No summary for method setPwd()" source="phpDocumentor.file.PPC:ERR-50008"/>
+  </file>
+  <file name="views\Werkman_Tickets.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="config\hooks.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\errors\cli\error_php.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Login.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\Verander_wachtwoord_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="59" severity="error" message="No summary for method get_password()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="18" severity="error" message="No summary for property $column_Email" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="22" severity="error" message="No summary for property $column_ID" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="26" severity="error" message="No summary for property $column_Password" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="30" severity="error" message="No summary for property $table_Name" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="controllers\Registreer.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\registreer.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Logout.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="models\Tickets_model.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="17" severity="error" message="No summary for property $table" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="21" severity="error" message="No summary for property $column" source="phpDocumentor.file.PPC:ERR-50007"/>
+    <error line="26" severity="error" message="No summary for property $order" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="views\errors\cli\error_404.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\shared\header.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Admin.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="views\errors\html\error_404.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\WerkmanTickets.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="23" severity="error" message="No summary for method getId()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="31" severity="error" message="No summary for method setId()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="18" severity="error" message="No summary for property $id" source="phpDocumentor.file.PPC:ERR-50007"/>
+  </file>
+  <file name="views\login.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="controllers\Dispatcher.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="190" severity="error" message="No summary for method test()" source="phpDocumentor.file.PPC:ERR-50008"/>
+  </file>
+  <file name="config\memcached.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+</checkstyle>

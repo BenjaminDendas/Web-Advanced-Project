@@ -1,0 +1,21 @@
+<!-- 
+Author = Wasla Habib		Reviewer = Glenn Martens
+
+BRONNEN: 
+https://www.youtube.com/watch?v=FmKm1gCgUoM
+http://www.sourcecodester.com/php/7290/user-registration-and-login-system-codeigniter.html
+https://www.youtube.com/watch?v=T39lkofTq2M
+!-->
+
+<div id="wrap">
+	<div class="container">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        	<br>
+    		<div class="box box-center">
+    			<h2>U hebt geen toegang</h2>
+                <p><a href="<?php echo base_url()."login"?>" role="button" class="btn btn-default"><b> &#60;-- Terug </b></a></p>
+			</div>
+            <br><br><br>
+    	</div>
+	</div>
+</div>

@@ -1,0 +1,75 @@
+<!--
+Author = Benjamin Dendas		Reviewer = Joris Meylaers
+!-->
+
+<div id="wrap">
+	<div class="container">
+		<div class="row">
+	    	<br>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	        	<div class="box-vragenlijst">
+	                <h2>Vragenlijst ticketingsysteem:</h2>
+	            </div>
+			</div>
+		</div>
+		<?php
+		$vraag_array = array(array(), array("Slecht", "Matig", "Gemiddeld", "Goed", "Zeer goed"));
+		foreach ($results as $r) {
+			array_push($vraag_array[0], $r);
+		}
+		?>
+		<div class="row">
+			<div class="col-sm-12">
+				<?php print form_open('Vraag/indien_validatie_vragen');
+				echo validation_errors('<div class="alert alert-danger">', '</div>');
+				if (isset($message)){ ?><div class="alert alert-danger"><?= $message ?></div><?php }?>
+
+				<table id="table" class="table table-striped table-bordered dt-responsive display nowrap datatable" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th>Vraag</th>
+							<th>Slecht</th>
+							<th>Matig</th>
+							<th>Gemiddeld</th>
+							<th>Goed</th>
+							<th>Zeer Goed</th>
+							</tr>
+						</thead>
+						<tbody>
+						<!-- begin vragenlijst !-->
+						<?php
+							$count = 1;
+							foreach ($vraag_array[0] as $vr) {
+								print "<tr><td>";
+								print form_label($vr->VR_Vraag);
+								print form_error('v' . $count . 'a', '<span class="error">', '</span></td>');
+								$selected = true;
+								foreach ($vraag_array[1] as $button) {
+									print '<td>';
+									print form_radio('v' . $count . 'a', $button, $selected);
+									print '</td>';
+									$selected = false;
+								}
+							$count++;
+							print "</tr>";
+						}
+					?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row" style="text-align: center">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<?php echo $cap['image']; ?>
+					<br>
+					<input type="text" autocomplete="off" name="captcha" placeholder="Enter above text"/>
+				</div>
+			</div>
+		</div>
+
+		<?php $option = array('class' => 'btn btn-success center-block');
+		print form_submit('mysubmit', 'Indienen', $option);
+		print form_close(); ?>
+	</div>
+</div>

@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * Class Gebruikers_model
+ * @Author Wasla Habib
+ * @Reviewer Glenn Martens
+ * @UnitTest Wasla Habib
+ * @link https://www.youtube.com/watch?v=FmKm1gCgUoM Codeigniter login/registreer tutorial
+ * @link http://www.sourcecodester.com/php/7290/user-registration-and-login-system-codeigniter.html gebruiker registratie/login systeem
+ * @Link https://www.youtube.com/watch?v=T39lkofTq2M login/registreer systeem
+ */
+class Gebruikers_model extends CI_Model
+{
+    /**
+     * Controleren of gebruiker kan inloggen.
+     *
+     * Controleerd of de gebruiker kan inloggen met de doorgegeven informatie, indien de methode TRUE teruggeeft
+     * is de informatie correct en word de gebruiker ingelogd m.b.v. een externe methode.
+     * @return bool
+     */
+    public function can_log_in()
+   {
+       $this->db->where('GB_Email', $this->input->post('email'));
+	   $this->db->where('GB_Wachtwoord', sha1($this->input->post('wachtwoord')));
+       $query = $this->db->get('TB_Gebruikers');
+	   
+	   if($query->num_rows()==1)
+       {
+			return TRUE;
+       } else {
+        	return FALSE;
+       }
+   }
+
+    /**
+     * Get de user-info.
+     *
+     * @return mixed
+     */
+    public function get_user()
+   {
+       	$this->db->where('GB_Email', $this->input->post('email'));
+       	$this->db->where('GB_Wachtwoord', sha1($this->input->post('wachtwoord')));
+       	$query = $this->db->get('TB_Gebruikers');
+	   	$row = $query->row_array();
+		return $row;
+   }
+
+    /**
+     * Toevoegen van een nieuwe gebruiker.
+     *
+     * Aan de hand van de ingegeven data door de gebruiker zal er een nieuwe gebruiker
+     * toegevoegd worden in de databank.
+     *
+     * @return mixed
+     */
+    public function nieuwe_gebruiker()
+    {
+        $insert_user_in_database=array(
+            'GB_Email' 		=> $this->input->post('email'),
+            'GB_Wachtwoord' => sha1($this->input->post('wachtwoord')),
+            'GB_Voornaam'   => $this->input->post('voornaam'),
+            'GB_Achternaam' => $this->input->post('achternaam'),
+            'GB_Groep'  	=> 'Gebruiker',
+            'GB_Status' 	=> 'Niet-Actief'
+		);
+
+        $query = $this->db->insert('TB_Gebruikers', $insert_user_in_database);
+        return $query;
+    }
+}

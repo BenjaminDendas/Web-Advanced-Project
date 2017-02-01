@@ -1,0 +1,117 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Class Members
+ * @Author Wasla Habib
+ * @Reviewer Glenn Martens
+ * @UnitTest Wasla Habib
+ * @link https://ellislab.com/codeigniter/user-guide/libraries/unit_testing.html Unit-testing
+ * @link https://www.youtube.com/watch?v=FmKm1gCgUoM Codeigniter login/registreer tutorial
+ * @link http://www.sourcecodester.com/php/7290/user-registration-and-login-system-codeigniter.html gebruiker registratie/login systeem
+ * @Link https://www.youtube.com/watch?v=T39lkofTq2M login/registreer systeem
+
+ */
+class Members extends CI_Controller {
+
+	/**
+	 * Members constructor.
+	 * Laad de categorie_Werkman_model in.
+     */
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('categorie_Werkman_model','cwm');
+    }
+
+	/**
+	 * Redirecten naar de juiste pagina afhankelijk van de gebruiker-groep.
+	 *
+	 * Op basis van de groep die zich in de user-sessie bevind, zal de ingelogde gebruiker automatisch naar de correcte Controller gestuurd worden
+	 * die vervolgens de juiste views voor de gebruiker laad.
+     */
+	public function index()
+	{
+		$data = $this->session->userdata;
+
+		$data['dropdown'] = $this->cwm->get_categorie();
+		$data['werkman'] = $this->cwm->get_werknemer();
+        $data['categorie'] = $this->cwm->get_categorie();
+
+		// Controle op de gebruiker die inlogt. (bv.: Is hij/zij actief lid? Behoort hij/zij tot de administrator groep?)
+		if($data['is_logged_in'] === 1)
+		{
+			if ($data['status'] === 'Actief')
+			{
+				if($data['groep'] === 'Administrator') 
+				{
+					$this->load->view('shared/header');
+					$this->load->view('admin', $data);
+					$this->load->view('shared/footer');
+				}
+				else if($data['groep'] === 'Dispatcher') 
+				{
+					$this->load->view('shared/header');
+					$this->load->view('dispatcher_overzicht', $data);
+					$this->load->view('shared/footer');
+				}
+				else if($data['groep'] === 'Werkman')
+				{
+					$this->load->view('shared/header');
+					$this->load->view('werk_overzicht', $data);
+					$this->load->view('shared/footer');
+				}
+				else if($data['groep'] === 'Gebruiker')
+				{
+					$this->load->view('shared/header');
+					$this->load->view('overzicht', $data);
+					$this->load->view('shared/footer');
+				} 
+				else 
+				{
+					$this->session->sess_destroy();
+					redirect ('restricted');
+				}
+			} else {
+				$this->session->sess_destroy();
+				redirect ('restricted');
+			}	
+		} else {
+			redirect (); // Redirecten terug naar de login pagina.
+		}
+	}
+
+	/**
+	 * Unit test voor het controleren van de status van de gebruiker
+	 *
+	 * Controleerd of de gebruiker is ingelogd, of zijn account actief is.
+     */
+	public function test()
+	{
+		// BEGIN test = Test of de user ingelogd is
+		$test = $this->session->userdata('is_logged_in') == 1;
+		$expected_res = 'OK ';
+		$this->unit->run($test, $expected_res,'Test of de user ingelogd is ', 'Geef de result passed als de gebruiker ingelogd is');
+		// EINDE test
+		
+		// BEGIN test2 = Test de status
+		$test2= $this->session->userdata('status') == 'Actief';
+		$expected_res2 = 'OK ';
+		$this->unit->run($test2, $expected_res2,'Test de status ', 'Geef de result passed , als de gebruiker actief is anders geef de result Failed');
+		// EINDE test2
+
+		// BEGIN test3 = Test op groep
+		$test3= $this->session->userdata('groep') == 'Administrator';
+		$expected_res3 = ' ';
+		$this->unit->run($test3, $expected_res3,'Test de groep ', 'Geef de Result Passed als de groep Administrator is anders , geef de Result Failed');
+		// EINDE test3
+
+		// BEGIN test4 = Test the credentials
+		$test4 = 'restricted';
+		$expected_res4 = 'Error';
+		$this->unit->run($test4, $expected_res4,'Test the credentials ', 'Als de conditie niet jusit is , redirect naar de restricted pagina');
+		// EINDE test4
+
+		$this->load->view('testing');
+	}
+}

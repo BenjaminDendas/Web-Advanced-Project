@@ -1,0 +1,46 @@
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Class VeranderWachtwoord_model
+ * @Author Glenn Martens
+ * @Reviewer Joris Meylaers
+ */
+class VeranderWachtwoord_model extends CI_Model {
+
+	/**
+	 * Opvragen van het oud wachtwoord van de gebruiker.
+	 *
+	 * @param $ID
+	 * @param $oldPwd
+	 * @return mixed
+     */
+	public function getPwd($ID, $oldPwd)
+	{	
+		$this->db->select('GB_Wachtwoord');
+		$this->db->from('TB_Gebruikers');
+		$this->db->where( array(
+							'GB_ID' => $ID, 
+							'GB_Wachtwoord' => $oldPwd));
+		$query = $this->db->get();
+		$row = $query->row_array(); 
+		return $row['GB_Wachtwoord'];
+    }
+
+	/**
+	 * Updaten van het oud wachtwoord van de gebruiker met het nieuwe gekozen wachtwoord.
+	 *
+	 * @param $ID
+	 * @param $oldPassword
+	 * @param $newPassword
+     */
+	public function setPwd($ID, $oldPassword, $newPassword)
+	{
+		$tmp = $this->db->where( array(
+									'GB_ID' => $ID,
+									'GB_Wachtwoord' => $oldPassword));
+
+		$this->db->update('TB_Gebruikers', array('GB_Wachtwoord' => $newPassword));
+    }
+}

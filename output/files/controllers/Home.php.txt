@@ -1,0 +1,31 @@
+<?php
+/* 
+Author = Wasla Habib		Reviewer = Glenn Martens
+
+BRONNEN: 
+https://www.youtube.com/watch?v=FmKm1gCgUoM
+http://www.sourcecodester.com/php/7290/user-registration-and-login-system-codeigniter.html
+https://www.youtube.com/watch?v=T39lkofTq2M
+*/
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Class Home
+ */
+class Home extends CI_Controller {
+
+	/**
+	 *
+     */
+	public function index()
+	{
+		if($this->session->userdata('is_logged_in') AND $this->session->status === 'Actief')
+		{ 
+			redirect('Members');
+		} else {
+			$this->load->view('shared/header');
+			$this->load->view('home');
+			$this->load->view('shared/footer');
+		}
+	}	
+}

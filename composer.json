@@ -1,0 +1,14 @@
+{
+    "name": "11400747/project",
+    "authors": [
+        {
+            "name": "whoami1995",
+            "email": "benjamindendas@msn.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {},
+	"require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
+    }
+}
